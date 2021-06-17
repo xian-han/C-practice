@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-int min(int arr[]);
+int idx(int arr[]);
 int main(void)
 {
     int a[6]={3,6,2,5,4,1};
@@ -9,16 +9,18 @@ int main(void)
         printf("%2d",a[i]);
     }
     putchar('\n');
-    printf("the minimum of a=%2d\n",min(a));
+    printf("the index of minimum of a=%2d\n",idx(a));
     return 0;
 }
-int min(int arr[]){
-    int i,min;
+int idx(int arr[]){
+    int i,min_index=0,min;
     for(i=0,min=arr[0];i<6;i++){
-        if(arr[i]<min)
+        if(arr[i]<min){
             min=arr[i];
+            min_index=i;
+        }
     }
-    return min;
+    return min_index+1;
 }
 
 
