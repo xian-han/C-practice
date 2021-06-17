@@ -3,6 +3,7 @@
 
 int main(void)
 {
+    //C語言練習9.2.14
     float table[3][4]={{18.2,17.3,15.0,13.4},{23.8,25.1,20.6,17.8},{20.6,21.5,18.4,15.7}};
     int i,j;
     //印出陣列內容
@@ -72,7 +73,10 @@ int main(void)
         }
     }
     printf("the coldest day=%d\n",day2);
-
     return 0;
 
 }
+
+
+
+
