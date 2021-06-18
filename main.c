@@ -1,30 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
-void toLower(char str[]);
-int length(char str[]);
+#define MAX 3
+#define LENGTH 10
+void string_cpy(char arr1[MAX][LENGTH],char arr2[MAX][LENGTH]);
 int main(void)
 {
-    char str[100];
-    gets(str);
-    fflush(stdin);
-    toLower(str);
-    puts(str);
+    char arr1[MAX][LENGTH]={"Tom","Lily","James Lee"};
+    char arr2[MAX][LENGTH];
+    string_cpy(arr1,arr2);
+    int i,j;
+    for(i=0;i<MAX;i++){
+        for(j=0;arr2[i][j]!='\0';j++){
+           printf("%c",arr2[i][j]);
+        }
+        putchar('\n');
+    }
     return 0;
 }
-void toLower(char str[]){
-    int i=0,leng=length(str);
-    do{
-        if(str[i]>='A'&&str[i]<='Z'){
-            str[i]+=32;
+void string_cpy(char arr1[][LENGTH],char arr2[][LENGTH]){
+    int i,j;
+    for(i=0;i<MAX;i++){
+        for(j=0;j<LENGTH;j++){
+            arr2[i][j]=arr1[i][j];
         }
-        i++;
-    }while(i<leng);
+    }
 }
-int length(char str[]){
-    int leng=0,i=0;
-    do{
-        leng++;
-        i++;
-    }while(str[i]!='\0');
-    return leng;
-}
+
